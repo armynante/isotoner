@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import todos from './todos';
+import { base } from './base.js';
 
 export default combineReducers({
-    todos,
+    base: base,
     routing: routerReducer
 });

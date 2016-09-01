@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 import reducers from '../src/reducers';
 import routes from '../src/routes';
-import { Main, buildMuiTheme} from '../src/materialTheme.js'
+// import { Main, buildMuiTheme} from '../src/materialTheme.js'
 
 
 export default (req, res) => {
@@ -20,9 +20,6 @@ export default (req, res) => {
         userAgent: req.headers['user-agent']
       };
 
-      // console.log(buildMuiTheme(req.headers['user-agent']));
-      // console.log("agent" + req.headers['user-agent']);
-      // console.log("headers:" + req.headers);
       if(process.env.NODE_ENV == 'development') {
 				res.status(200).send(`
 					<!doctype html>
@@ -53,7 +50,7 @@ export default (req, res) => {
     								</Provider>
                   </Main>
   							)}</div>
-  							<script src='bundle.js'></script>
+  							<script src=${__dir}/bundle.js'></script>
   						</body>
   					</html>
   				`);

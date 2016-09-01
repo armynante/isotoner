@@ -4,10 +4,12 @@ import webpack from 'webpack';
 import middleware from './middleware';
 
 const app = express();
-const PORT = process.env.PORT || 8000
+const PORT = process.env.PORT || 9000
 
 
 if(process.env.NODE_ENV === 'development') {
+  console.log('IN SEVRER');
+
 	const config = require('../webpack.config.dev');
 	const compiler = webpack(config);
 	app.use(require('webpack-dev-middleware')(compiler, {
